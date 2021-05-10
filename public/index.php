@@ -1,3 +1,34 @@
+<?php
+
+use Entity\Post;
+use Entity\User;
+
+require '../vendor/autoload.php';
+
+$user1 = new User();
+$user1->id = 1;
+$user1->nickname = "user1";
+$user1->paswd = "pswd1";
+
+$post1 = new Post();
+$post1->user_id = 1;
+$post1->title = "Tutu";
+$post1->datetime = "12/12/2021";
+$post1->description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos beatae magni nulla tempora, eum nesciunt sequi quod saepe earum atque optio. Dignissimos iure nemo perspiciatis est aut. Libero, blanditiis ipsa! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae, amet eum dolorum, obcaecati illum temporibus perferendis a atque sed dolorem facilis non officiis numquam eaque quas vel. Quia, corporis nobis! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis a ipsam illum accusamus molestias quasi suscipit facilis impedit non, in ex maiores obcaecati, officia illo, soluta nam! Incidunt, laudantium consequatur.";
+$post1->url_img = "https://images.pexels.com/photos/2179483/pexels-photo-2179483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
+$post1->user = $user1;
+
+$post2 = new Post();
+$post2->user_id = 2;
+$post2->title = "Toto";
+$post1->datetime = "13/12/2021";
+$post2->description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos beatae magni nulla tempora, eum nesciunt sequi quod saepe earum atque optio. Dignissimos iure nemo perspiciatis est aut. Libero, blanditiis ipsa! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae, amet eum dolorum, obcaecati illum temporibus perferendis a atque sed dolorem facilis non officiis numquam eaque quas vel. Quia, corporis nobis! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis a ipsam illum accusamus molestias quasi suscipit facilis impedit non, in ex maiores obcaecati, officia illo, soluta nam! Incidunt, laudantium consequatur.";
+$post2->url_img = "https://images.pexels.com/photos/5878801/pexels-photo-5878801.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
+$post2->user = $user1;
+
+$items = array($post1, $post2);
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -27,24 +58,34 @@
         <div>
             <div class="row">
                 <div class="col-8">
-                    <div class="card mb-5">
-                        <div class="card-body">
-                            <h3 class="h5 font-weight-bolder">Profil d'utilisateur</h3>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos beatae magni nulla tempora, eum nesciunt sequi quod saepe earum atque optio. Dignissimos iure nemo perspiciatis est aut. Libero, blanditiis ipsa! Lorem, ipsum dolor
-                                sit amet consectetur adipisicing elit. Recusandae, amet eum dolorum, obcaecati illum temporibus perferendis a atque sed dolorem facilis non officiis numquam eaque quas vel. Quia, corporis nobis! Lorem, ipsum dolor sit amet
-                                consectetur adipisicing elit. Perferendis a ipsam illum accusamus molestias quasi suscipit facilis impedit non, in ex maiores obcaecati, officia illo, soluta nam! Incidunt, laudantium consequatur.</p>
+
+                    <?php {
+                    ?>
+                        <div class="card mb-5">
+                            <div class="card-body">
+                                <h3 class="h5 font-weight-bolder"><?= $post1->title ?></h3>
+                                <p class="card-text"><?= $post1->description ?></p>
+                                <p><?= $post1->datetime ?></p>
+                            </div>
+                            <img src=<?= $post1->url_img ?> class="card-img-top" alt="...">
                         </div>
-                        <img src="https://images.pexels.com/photos/2179483/pexels-photo-2179483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="...">
-                    </div>
-                    <div class="card mb-5">
-                        <div class="card-body">
-                            <h3 class="h5 font-weight-bolder">Profil d'utilisateur</h3>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos beatae magni nulla tempora, eum nesciunt sequi quod saepe earum atque optio. Dignissimos iure nemo perspiciatis est aut. Libero, blanditiis ipsa! Lorem, ipsum dolor
-                                sit amet consectetur adipisicing elit. Recusandae, amet eum dolorum, obcaecati illum temporibus perferendis a atque sed dolorem facilis non officiis numquam eaque quas vel. Quia, corporis nobis! Lorem, ipsum dolor sit amet
-                                consectetur adipisicing elit. Perferendis a ipsam illum accusamus molestias quasi suscipit facilis impedit non, in ex maiores obcaecati, officia illo, soluta nam! Incidunt, laudantium consequatur.</p>
+                    <?php
+                    }
+                    ?>
+
+                    <?php {
+                    ?>
+                        <div class="card mb-5">
+                            <div class="card-body">
+                                <h3 class="h5 font-weight-bolder"><?= $post2->title ?></h3>
+                                <p class="card-text"><?= $post2->description ?></p>
+                                <p><?= $post2->datetime ?></p>
+                            </div>
+                            <img src=<?= $post2->url_img ?> class="card-img-top" alt="...">
                         </div>
-                        <img src="https://images.pexels.com/photos/5878801/pexels-photo-5878801.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="...">
-                    </div>
+                    <?php
+                    }
+                    ?>
                 </div>
                 <div class="col-4 border-left">
                     <p>Profil d'utilsateur</p>
@@ -84,11 +125,11 @@
                         </div>
                     </div>
                 </div>
-
             </div>
+
+        </div>
         </div>
     </main>
-
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
