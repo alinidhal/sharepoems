@@ -21,7 +21,7 @@ $post1->user = $user1;
 $post2 = new Post();
 $post2->user_id = 2;
 $post2->title = "Toto";
-$post1->datetime = "13/12/2021";
+$post2->datetime = "13/12/2021";
 $post2->description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos beatae magni nulla tempora, eum nesciunt sequi quod saepe earum atque optio. Dignissimos iure nemo perspiciatis est aut. Libero, blanditiis ipsa! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae, amet eum dolorum, obcaecati illum temporibus perferendis a atque sed dolorem facilis non officiis numquam eaque quas vel. Quia, corporis nobis! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis a ipsam illum accusamus molestias quasi suscipit facilis impedit non, in ex maiores obcaecati, officia illo, soluta nam! Incidunt, laudantium consequatur.";
 $post2->url_img = "https://images.pexels.com/photos/5878801/pexels-photo-5878801.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
 $post2->user = $user1;
@@ -36,6 +36,7 @@ $items = array($post1, $post2);
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/477b4091bc.js" crossorigin="anonymous"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -69,12 +70,6 @@ $items = array($post1, $post2);
                             </div>
                             <img src=<?= $post1->url_img ?> class="card-img-top" alt="...">
                         </div>
-                    <?php
-                    }
-                    ?>
-
-                    <?php {
-                    ?>
                         <div class="card mb-5">
                             <div class="card-body">
                                 <h3 class="h5 font-weight-bolder"><?= $post2->title ?></h3>
@@ -86,6 +81,7 @@ $items = array($post1, $post2);
                     <?php
                     }
                     ?>
+
                 </div>
                 <div class="col-4 border-left">
                     <p>Profil d'utilsateur</p>
@@ -136,5 +132,7 @@ $items = array($post1, $post2);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
 </body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
 </html>
