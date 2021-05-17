@@ -1,0 +1,37 @@
+[{
+        "id": 1,
+        "nickname": "Titi",
+        "title": "Bonjour",
+        "description": "Bonjour tout le monde",
+        "datetime": "12/12/2021",
+        "url_img": "https://images.pexels.com/photos/2179483/pexels-photo-2179483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "user": 1
+    },
+    {
+        "id": 2,
+        "nickname": "Toto",
+        "title": "Bye bye",
+        "description": "Bye bye tout le monde",
+        "datetime": "12/12/2021",
+        "url_img": "https://images.pexels.com/photos/5878801/pexels-photo-5878801.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "user": 2
+    },
+    {
+        "id": 3,
+        "nickname": "Tutu",
+        "title": "Salam",
+        "description": "Mon poème est pour tous",
+        "datetime": "12/12/2021",
+        "url_img": "https://cdn.pixabay.com/photo/2017/08/30/12/45/girl-2696947_960_720.jpg",
+        "user": 3
+    },
+    {
+        "id": 4,
+        "nickname": "Tata",
+        "title": "Habari Za nyubani",
+        "description": "L'écriture swahili",
+        "datetime": "12/12/2021",
+        "url_img": "https://cdn.pixabay.com/photo/2019/02/14/07/28/painting-3995999__340.jpg",
+        "user": 4
+    }
+]
