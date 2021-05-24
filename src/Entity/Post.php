@@ -2,12 +2,12 @@
 
 namespace Entity;
 
+use Entity\User;
 use ludk\Utils\Serializer;
 
 class Post
 {
     public $id;
-    public $nickname;
     public $title;
     public $description;
     public $datetime;

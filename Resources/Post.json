@@ -1,6 +1,5 @@
 [{
         "id": 1,
-        "nickname": "Titi",
         "title": "Bonjour",
         "description": "Bonjour tout le monde",
         "datetime": "12/12/2021",
@@ -9,7 +8,6 @@
     },
     {
         "id": 2,
-        "nickname": "Toto",
         "title": "Bye bye",
         "description": "Bye bye tout le monde",
         "datetime": "12/12/2021",
@@ -18,7 +16,6 @@
     },
     {
         "id": 3,
-        "nickname": "Tutu",
         "title": "Salam",
         "description": "Mon poème est pour tous",
         "datetime": "12/12/2021",
@@ -27,7 +24,6 @@
     },
     {
         "id": 4,
-        "nickname": "Tata",
         "title": "Habari Za nyubani",
         "description": "L'écriture swahili",
         "datetime": "12/12/2021",
