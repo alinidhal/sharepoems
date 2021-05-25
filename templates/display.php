@@ -5,7 +5,7 @@ include __DIR__ . "/header.php";
     <?php
     if (isset($_SESSION['user'])) {
     ?>
-        <a href="?action=new" class="btn btn-outline-info my-2 my-sm-0" role="button" type="submit" aria-pressed="true">Ajouter un article</a>
+        <a href="/new" class="btn btn-outline-info my-2 my-sm-0" role="button" type="submit" aria-pressed="true">Ajouter un article</a>
     <?php
     } ?>
     <div>

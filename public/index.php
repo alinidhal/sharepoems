@@ -16,7 +16,7 @@ $manager = $orm->getManager();
 $postRepo = $orm->getRepository(Post::class);
 $userRepo = $orm->getRepository(User::class);
 
-$action = $_GET["action"] ?? "display";
+$action = substr(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), 1);
 switch ($action) {
     case 'register':
         include "../Resources/User.json";
@@ -40,7 +40,7 @@ switch ($action) {
                 $manager->persist($newUser);
                 $manager->flush();
                 $_SESSION['user'] = $newUser;
-                header('Location: ?action=display');
+                header('Location: /display');
             }
         } else {
             include "../templates/registerForm.php";
@@ -50,7 +50,7 @@ switch ($action) {
         if (isset($_SESSION['user'])) {
             unset($_SESSION['user']);
         }
-        header('Location: ?action=display');
+        header('Location: /display');
         break;
 
     case 'login':
@@ -62,7 +62,7 @@ switch ($action) {
             $usersWithThisNicknameAndPassword = $userRepo->findBy($criteriaWithloginAndPawword);
             if (count($usersWithThisNicknameAndPassword) == 1) {
                 $_SESSION['user'] = $usersWithThisNicknameAndPassword[0];
-                header('Location: ?action=display');
+                header('Location: /display');
             } else {
                 $errorMsg = "Wrong login and/or password.";
                 include "../templates/loginForm.php";
@@ -96,7 +96,7 @@ switch ($action) {
                 $newPost->user = $_SESSION['user'];
                 $manager->persist($newPost);
                 $manager->flush();
-                header('Location: ?action=display');
+                header('Location: /display');
             }
         } else {
             include "../templates/createForm.php";

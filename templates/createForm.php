@@ -2,7 +2,7 @@
 include __DIR__ . "/header.php"; ?>
 <div class="row mt-5">
     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <form class="form-signin" method="POST" action=" ?action=new">
+        <form class="form-signin" method="POST" action=" /new">
             <h2 class="form-signin-header" style="color:black;"> Nouveau code source </h2>
             <?php
             if (isset($errorMsg)) {

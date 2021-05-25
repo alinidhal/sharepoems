@@ -28,12 +28,12 @@
                 <?php
                 if (isset($_SESSION['user'])) {
                 ?>
-                    <a href="?action=logout" class="btn btn-outline-info my-2 my-sm-0" role="button" type="submit" aria-pressed="true">Déconnexion</a>
+                    <a href="/logout" class="btn btn-outline-info my-2 my-sm-0" role="button" type="submit" aria-pressed="true">Déconnexion</a>
                 <?php
                 } else {
                 ?>
-                    <a href="?action=login" class="btn btn-outline-info my-2 my-sm-0" role="button" type="submit" aria-pressed="true">Connexion</a>
-                    <a href="?action=register" class="btn btn-outline-info my-2 my-sm-0 ml-2" role="button" type="submit" aria-pressed="true">Inscrivez-vous</a>
+                    <a href="/login" class="btn btn-outline-info my-2 my-sm-0" role="button" type="submit" aria-pressed="true">Connexion</a>
+                    <a href="/register" class="btn btn-outline-info my-2 my-sm-0 ml-2" role="button" type="submit" aria-pressed="true">Inscrivez-vous</a>
                 <?php
                 }
                 ?>
