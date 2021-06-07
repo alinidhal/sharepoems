@@ -1,10 +1,9 @@
-<?php
-include __DIR__ . "/header.php";
-?>
+{% include '/header.php' %}
 <main class="container">
     <?php
-    if (isset($_SESSION['user'])) {
+    if (isset($_SESSION["user"])) {
     ?>
+
         <a href="/new" class="btn btn-outline-info my-2 my-sm-0" role="button" type="submit" aria-pressed="true">Ajouter un article</a>
     <?php
     } ?>
@@ -51,5 +50,4 @@ include __DIR__ . "/header.php";
     </div>
     </div>
 </main>
-<?php include __DIR__ . "/footer.php";
-?>
+{% include '/footer.php' %}

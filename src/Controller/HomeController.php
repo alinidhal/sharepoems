@@ -2,17 +2,23 @@
 
 namespace Controller;
 
-class HomeController
+use Entity\Post;
+use Entity\User;
+use ludk\Http\Request;
+use ludk\Http\Response;
+use ludk\Controller\AbstractController;
+
+class HomeController extends AbstractController
 {
 
-    public function display()
+    public function display(Request $request): Response
     {
-        global $postRepo;
-        global $userRepo;
+        $postRepo = $this->getOrm()->getRepository(Post::class);
+        $userRepo = $this->getOrm()->getRepository(User::class);
 
         $items = array();
-        if (isset($_GET['search'])) {
-            $strToSearch = $_GET['search'];
+        if ($request->query->has('search')) {
+            $strToSearch = $request->query->get('search');
             if (strpos($strToSearch, "@") === 0) {
                 $userName = substr($strToSearch, 1);
                 $users = $userRepo->findBy(array("nickname" => $userName));
@@ -25,6 +31,8 @@ class HomeController
         } else {
             $items = $postRepo->findAll();
         }
-        include "../templates/display.php";
+        return $this->render("display.php", ["items" => $items]);
+
+        // include "../templates/display.php";
     }
 }

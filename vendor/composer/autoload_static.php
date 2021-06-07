@@ -39,6 +39,9 @@ class ComposerStaticInit9c0a16ceae501875436007510dd2ec24
     );
 
     public static $classMap = array (
+        'Controller\\AuthController' => __DIR__ . '/../..' . '/src/Controller/AuthController.php',
+        'Controller\\ContentController' => __DIR__ . '/../..' . '/src/Controller/ContentController.php',
+        'Controller\\HomeController' => __DIR__ . '/../..' . '/src/Controller/HomeController.php',
         'Entity\\Post' => __DIR__ . '/../..' . '/src/Entity/Post.php',
         'Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
     );
