@@ -1,7 +1,4 @@
-<?php
-include __DIR__ . "/header.php";
-?>
-
+{% include '/header.php' %}
 <div class="row container-fluid " style="height: 56rem;">
     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto align-item-center my-5">
         <form class="form-signin" method="POST" action="/login">
@@ -20,6 +17,4 @@ include __DIR__ . "/header.php";
         </form>
     </div>
 </div>
-<?php
-include __DIR__ . "/footer.php";
-?>
+{% include '/footer.php' %}

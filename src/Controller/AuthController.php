@@ -13,7 +13,7 @@ class AuthController extends AbstractController
     public function login(Request $request): Response
     {
         $userRepo = $this->getOrm()->getRepository(User::class);
-
+        $manager = $this->getOrm()->getManager();
         if ($request->request->has('username') && $request->request->has('password')) {
             $criteriaWithloginAndPawword = [
                 "nickname" => $request->request->get('username'),
@@ -24,11 +24,13 @@ class AuthController extends AbstractController
                 $request->getSession()->set('user', $usersWithThisNicknameAndPassword[0]);
                 return $this->redirectToRoute("display");
             } else {
-                $errorMsg = "Wrong login and/or password.";
-                include "../templates/loginForm.php";
+                $data = array(
+                    "errormsg" => "Wrong login and/or password."
+                );
+                return $this->render('loginForm.php', $data);
             }
         } else {
-            include "../templates/loginForm.php";
+            return $this->render('loginForm.php');
         }
     }
     //Methode pour la déconnexion
@@ -38,7 +40,7 @@ class AuthController extends AbstractController
         if ($request->getSession()->has('user')) {
             $request->getSession()->remove('user');
         }
-        return $this->redirectToRoute("display");
+        return $this->redirectToRoute('display');
     }
     //Methode pour l'inscription
     public function register(Request $request): Response
@@ -58,7 +60,10 @@ class AuthController extends AbstractController
                 $errorMsg = "Your nickname should have at least 4 characters.";
             }
             if ($errorMsg) {
-                include "../templates/registerForm.php";
+                $data = array(
+                    'errorMsg' => $errorMsg
+                );
+                return $this->render('registerForm.php', $data);
             } else {
                 $newUser = new User();
                 $newUser->nickname = $request->request->get('username');
@@ -69,7 +74,7 @@ class AuthController extends AbstractController
                 return $this->redirectToRoute("display");
             }
         } else {
-            include "../templates/registerForm.php";
+            return $this->render('registerForm.php');
         }
     }
 }

@@ -31,7 +31,10 @@ class HomeController extends AbstractController
         } else {
             $items = $postRepo->findAll();
         }
-        return $this->render("display.php", ["items" => $items]);
+        $data = array(
+            "items" => $items
+        );
+        return $this->render("display.php", $data);
 
         // include "../templates/display.php";
     }
