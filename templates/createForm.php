@@ -1,5 +1,4 @@
-<?php
-include __DIR__ . "/header.php"; ?>
+{% include '/header.php' %}
 <div class="row mt-5">
     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <form class="form-signin" method="POST" action=" /new">
@@ -23,11 +22,10 @@ include __DIR__ . "/header.php"; ?>
             </div>
             <div class="form-row">
                 <label for="ImageSongAlbum">Mettez une image du chant</label>
-                <input type="file" class="form-control-file" id="ImageSongAlbum" placeholder="Mettez l'image de l'artiste ou de l'album" name="image" autofocus="" />
+                <input type="text" class="form-control" id="ImageSongAlbum" placeholder="Mettez l'image de l'artiste ou de l'album" name="image" autofocus="" />
             </div>
             <button type="submit" class="btn btn-primary">Ajouter</button>
         </form>
     </div>
 </div>
-<?php
-include __DIR__ . "/footer.php";
+{% include '/footer.php' %}
